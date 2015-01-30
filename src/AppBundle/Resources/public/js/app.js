@@ -13,7 +13,6 @@ App.IndexRoute = Ember.Route.extend({
 
 App.MessagesRoute = Ember.Route.extend({
     model: function(args) {
-        // debugger;
         return App.Message.find();
     }
 });
@@ -33,13 +32,6 @@ App.Store = DS.Store.extend({
     url: url
   })
 });
-// App.Store = DS.Store.extend({
-//     revision: 11
-// });
-// App.Store = DS.Store.extend({
-//     revision: 11,
-//     adapter: 'DS.FixtureAdapter'
-// });
 
 App.Message = DS.Model.extend({
     user: DS.belongsTo("App.User"),
@@ -50,24 +42,3 @@ App.User = DS.Model.extend({
     messages: DS.hasMany("App.Message"),
     screen_name: DS.attr("string")
 });
-
-
-// Fixtures
-App.Message.FIXTURES = [{
-    id: 1,
-    text: "Hello lovely world",
-    user: 1
-}, {
-    id: 2,
-    text: "Hello again",
-    user: 1
-}, {
-    id: 3,
-    text: "Goodbye, cruel world :(",
-    user: 1
-}];
-
-App.User.FIXTURES = [{
-    id: 1,
-    screen_name: "steveWINton"
-}];
