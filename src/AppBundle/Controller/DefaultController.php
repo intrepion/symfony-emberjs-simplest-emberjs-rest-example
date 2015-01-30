@@ -14,4 +14,20 @@ class DefaultController extends Controller
     {
         return $this->render('AppBundle:Default:index.html.twig');
     }
+
+    /**
+     * @Route("/users", name="users")
+     */
+    public function usersAction()
+    {
+        return $this->render('AppBundle:Default:users.html.twig');
+    }
+
+    /**
+     * @Route("/messages", name="messages")
+     */
+    public function messagesAction()
+    {
+        return $this->render('AppBundle:Default:messages.html.twig');
+    }
 }
