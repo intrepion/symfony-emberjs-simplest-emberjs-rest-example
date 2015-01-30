@@ -16,17 +16,26 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/users", name="users")
+     * @Route("/users", name="find-all-users")
      */
-    public function usersAction()
+    public function findAllUsersAction()
     {
         return $this->render('AppBundle:Default:users.html.twig');
     }
 
     /**
-     * @Route("/messages", name="messages")
+     * @Route("/users/{id}", name="find-user")
      */
-    public function messagesAction()
+    public function findUserAction($id)
+    {
+        return $this->render('AppBundle:Default:user.html.twig');
+    }
+
+
+    /**
+     * @Route("/messages", name="find-all-messages")
+     */
+    public function findAllMessagesAction()
     {
         return $this->render('AppBundle:Default:messages.html.twig');
     }
