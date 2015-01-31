@@ -8,10 +8,10 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * User
  *
- * @ORM\Table(name="user")
+ * @ORM\Table(name="app_user")
  * @ORM\Entity(repositoryClass="AppBundle\Entity\UserRepository")
  */
-class User
+class AppUser
 {
     /**
      * @var integer
@@ -30,13 +30,14 @@ class User
     private $screenName;
 
     /**
-     * @ORM\OneToMany(targetEntity="Message", mappedBy="user")
+     * @ORM\OneToMany(targetEntity="Message", mappedBy="appUser")
      **/
     private $message;
 
 
     public function __construct()
     {
+        $this->message = new ArrayCollection();
     }
 
     /**
@@ -76,7 +77,7 @@ class User
      * Add message
      *
      * @param \AppBundle\Entity\Message $message
-     * @return User
+     * @return AppUser
      */
     public function addMessage(\AppBundle\Entity\Message $message)
     {

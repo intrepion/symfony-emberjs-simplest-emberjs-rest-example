@@ -29,15 +29,14 @@ class Message
     private $text;
 
     /**
-     * @ORM\ManyToOne(targetEntity="User", inversedBy="message")
-     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="AppUser", inversedBy="message")
+     * @ORM\JoinColumn(name="app_user_id", referencedColumnName="id")
      */
-    protected $user;
+    protected $appUser;
 
 
     public function __construct()
     {
-        $this->user = new ArrayCollection();
     }
 
     /**
@@ -74,25 +73,25 @@ class Message
     }
 
     /**
-     * Set user
+     * Set appUser
      *
-     * @param \AppBundle\Entity\User $user
+     * @param \AppBundle\Entity\AppUser $appUser
      * @return Message
      */
-    public function setUser(\AppBundle\Entity\User $user = null)
+    public function setUser(\AppBundle\Entity\AppUser $appUser = null)
     {
-        $this->user = $user;
+        $this->appUser = $appUser;
 
         return $this;
     }
 
     /**
-     * Get user
+     * Get appUser
      *
-     * @return \AppBundle\Entity\User 
+     * @return \AppBundle\Entity\AppUser 
      */
-    public function getUser()
+    public function getAppUser()
     {
-        return $this->user;
+        return $this->appUser;
     }
 }
