@@ -6,10 +6,10 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * User
+ * AppUser
  *
  * @ORM\Table(name="app_user")
- * @ORM\Entity(repositoryClass="AppBundle\Entity\UserRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Entity\AppUserRepository")
  */
 class AppUser
 {
